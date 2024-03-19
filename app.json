@@ -25,6 +25,23 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "expo": {
+      "plugins": [
+        [
+          "expo-font",
+          {
+            "fonts": [
+              "./assets/fonts/comic-sans-ms.ttf",
+              "./assets/fonts/comic-sans-ms-bold.ttf"
+            ]
+          }
+        ]
+      ]
+    },
+    "plugins": [
+      "expo-font",
+      "expo-router"
+    ]
   }
 }
