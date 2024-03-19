@@ -11,10 +11,10 @@ import * as THREE from "three";
 const Model = () => {
   const gltf = useGLTF(require("../assets/chicken.glb")) as GLTF;
   const mesh = useRef();
-  const [{ x, y, z }, setData] = useState({
+
+  const [{ x, y }, setData] = useState({
     x: 0,
     y: 0,
-    z: 0,
   });
   const [subscription, setSubscription] = useState(null);
   const _slow = () => Gyroscope.setUpdateInterval(1000);
@@ -31,6 +31,11 @@ const Model = () => {
     setSubscription(null);
   };
 
+  useEffect(() => {
+    _subscribe();
+    return () => _unsubscribe();
+  }, []);
+
   useFrame((state, delta) => {
     const xVal = ~~(x * 100) / 5000;
     const yVal = ~~(y * 100) / 5000;
@@ -39,6 +44,7 @@ const Model = () => {
       (mesh.current as THREE.Object3D).rotation.y += yVal;
     }
   });
+
   return <primitive object={gltf.scene} ref={mesh} />;
 };
 
