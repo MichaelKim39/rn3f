@@ -1,11 +1,11 @@
 import { StyleSheet, Text, View } from "react-native";
 
-const ItemListing = () => {
+const Pokedex = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Chicken Shop</Text>
-      <View style={styles.itemListingContainer}>
-        <Text style={styles.listingTitle}>My Roast Chicken</Text>
+      <Text style={styles.title}>Pokedex</Text>
+      <View style={styles.pokedexContainer}>
+        <Text style={styles.listingTitle}>Sudowoodo</Text>
         <View>
           <Text style={styles.listingText}>Reviews:</Text>
           <Text style={styles.listingText}>Yeah it's pretty good</Text>
@@ -15,7 +15,7 @@ const ItemListing = () => {
   );
 };
 
-export default ItemListing;
+export default Pokedex;
 
 const styles = StyleSheet.create({
   container: {
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     zIndex: -1,
   },
-  itemListingContainer: {
+  pokedexContainer: {
     borderWidth: 3,
     borderColor: "black",
     borderRadius: 20,

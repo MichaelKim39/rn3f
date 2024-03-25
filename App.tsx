@@ -10,6 +10,10 @@ const HomeScreen = () => {
     "Comic-Sans-Bold": require("./assets/fonts/comic-sans-ms-bold.ttf"),
   });
 
+  if (!fontsLoaded && !fontError) {
+    return null;
+  }
+
   return (
     <View style={styles.container}>
       <ItemListing />
